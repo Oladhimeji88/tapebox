@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"/mnt/c/Users/USER/Desktop/tapebox/Tape/Build/images/\" 2>&1)",
+      "Read(//mnt/c/Users/USER/Desktop/tapebox/Tape/Build/**)",
+      "PowerShell(Remove-Item -Recurse -Force \"c:\\\\Users\\\\USER\\\\Desktop\\\\tapebox\\\\Tape\" -Confirm:$false)"
+    ]
+  }
+}

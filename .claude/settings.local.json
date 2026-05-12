@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(xcopy /E /I /Y \"c:\\\\Users\\\\USER\\\\Desktop\\\\tapebox\\\\Tape\\\\Build\\\\images\" \"c:\\\\Users\\\\USER\\\\Desktop\\\\tapebox\\\\tapebox-react\\\\public\\\\images\")",
+      "Bash(wmic logicaldisk *)",
+      "Bash(dir \"c:\\\\Users\\\\USER\\\\Desktop\\\\tapebox\\\\Tape\\\\Build\\\\images\\\\\" 2>&1)",
+      "PowerShell(Get-ChildItem \"c:\\\\Users\\\\USER\\\\Desktop\\\\tapebox\\\\Tape\\\\Build\\\\images\" | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}})"
+    ]
+  }
+}
