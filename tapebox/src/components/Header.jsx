@@ -41,7 +41,7 @@ export default function Header() {
 
         {/* Logo */}
         <Link to="/" aria-label="TapeBox Home" className="shrink-0">
-          <img src="/images/Tapebox-logo.svg" alt="TapeBox" className="h-10" />
+          <img src="/images/Tapebox-logo.svg" alt="TapeBox" className="h-14" />
         </Link>
 
         {/* Desktop nav */}

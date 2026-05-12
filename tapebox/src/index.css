@@ -164,7 +164,7 @@
   font-weight: 700;
   color: rgba(255,255,255,0.24);
   background-image:
-    linear-gradient(90deg, #ffffff 0%, #dcfce7 100%),
+    linear-gradient(90deg, #ffffff 0%, #ffedd5 100%),
     linear-gradient(90deg, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.24) 100%),
     radial-gradient(160px circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.78), rgba(255,255,255,0) 66%);
   background-repeat: no-repeat;
@@ -255,16 +255,16 @@
   font-size: clamp(1.06rem,1.95vw,1.24rem);
   font-weight: 700;
   line-height: 1;
-  background: #16a34a;
+  background: #f97316;
   border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: 0 12px 26px rgba(22,163,74,0.34);
+  box-shadow: 0 12px 26px rgba(249,115,22,0.34);
   transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease, background 220ms ease;
 }
 .agents-join-btn:hover {
-  background: #15803d;
+  background: #ea580c;
   transform: translateY(-2px) scale(1.02);
   filter: brightness(1.04);
-  box-shadow: 0 17px 34px rgba(22,163,74,0.45), 0 0 26px rgba(22,163,74,0.4);
+  box-shadow: 0 17px 34px rgba(249,115,22,0.45), 0 0 26px rgba(249,115,22,0.4);
 }
 .agents-join-btn .join-arrow-icon {
   width: 1.16rem; height: 1.16rem;

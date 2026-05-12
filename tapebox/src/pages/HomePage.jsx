@@ -111,15 +111,15 @@ export default function HomePage() {
           <h1 className="hero-enter hero-brand landing-hero-title text-white mb-12 font-medium">
             <span ref={typewriterRef} className="hero-typewriter">TAPE BOX</span>
           </h1>
-          <p className="hero-enter hero-enter-delay landing-hero-copy text-green-100 text-center max-w-prose mx-auto">
+          <p className="hero-enter hero-enter-delay landing-hero-copy text-orange-100 text-center max-w-prose mx-auto">
             Smarter logistics. Faster shipping. Zero hassle.
           </p>
 
           <div className="hero-cta-row hero-enter hero-enter-delay-2">
-            <div className="dropbox-cta bg-green-600 hover:bg-slate-900">
+            <div className="dropbox-cta bg-orange-500 hover:bg-slate-900">
               <Link to="/dropbox">
                 <svg className="cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17H6a2 2 0 01-2-2V7a2 2 0 012-2h9a2 2 0 012 2v2m0 8a2 2 0 100-4 2 2 0 000 4zm0 0H9m8-8h2l2 2v4h-2m-10 0a2 2 0 100 4 2 2 0 000-4z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
                 <span>Drop a box</span>
                 <svg className="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -145,12 +145,12 @@ export default function HomePage() {
       </section>
 
       {/* Delivery highlight */}
-      <section ref={deliverySectionRef} className="delivery-highlight w-full bg-green-950 flex flex-col sm:flex-row px-9 rounded-sm gap-6 items-center justify-center scroll-reveal post-hero-section">
+      <section ref={deliverySectionRef} className="delivery-highlight w-full bg-orange-950 flex flex-col sm:flex-row px-9 rounded-sm gap-6 items-center justify-center scroll-reveal post-hero-section">
         <article className="w-full sm:w-1/2 flex flex-col">
           <h2 ref={deliveryTitleRef} className="delivery-highlight-title text-white flex mb-5 w-full">
             Fast, Reliable, and Affordable Delivery!
           </h2>
-          <Link to="/dropbox" className="flex bg-slate-900 text-white p-4 rounded-full mt-2 w-fit px-6 hover:bg-green-700">
+          <Link to="/dropbox" className="flex bg-slate-900 text-white p-4 rounded-full mt-2 w-fit px-6 hover:bg-orange-600">
             Get Started
           </Link>
         </article>
@@ -206,7 +206,7 @@ export default function HomePage() {
             <article className="service-item">
               <svg className="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" d="M3 19.5h18M6.5 19.5v-5M11 19.5V9.5M15.5 19.5v-7M20 19.5v-3.5" />
-                <path stroke="#22c55e" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M5 8.5l4-2.2 3 2.1 4-3 3 2.2" />
+                <path stroke="#f97316" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M5 8.5l4-2.2 3 2.1 4-3 3 2.2" />
               </svg>
               <h3 className="service-name">Drone &amp; Last-Mile Delivery</h3>
               <p className="service-copy">Combine drone support with route-optimized riders to deliver faster in busy areas and hard-to-reach zones.</p>
@@ -281,19 +281,19 @@ export default function HomePage() {
 
       {/* Track order */}
       <section id="track-order" className="max-w-4xl mx-auto p-8 my-12 w-full scroll-reveal post-hero-section">
-        <h2 className="text-2xl sm:text-3xl text-green-700 font-medium text-center mb-12">Track Your Order</h2>
+        <h2 className="text-2xl sm:text-3xl text-orange-600 font-medium text-center mb-12">Track Your Order</h2>
         <div className="bg-white p-8 rounded-lg shadow-md max-w-md mx-auto">
           <p className="text-gray-600 mb-6 text-center">Enter your tracking number to see the real-time status of your package.</p>
           <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); alert(`Tracking: ${e.target.trackingNumber.value}`) }}>
             <div>
               <label htmlFor="trackingNumber" className="block text-sm font-medium text-gray-700 mb-2">Tracking Number</label>
               <input type="text" id="trackingNumber" name="trackingNumber" placeholder="Enter your tracking number"
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" required />
+                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" required />
             </div>
-            <button type="submit" className="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition duration-300">Track Package</button>
+            <button type="submit" className="w-full bg-orange-500 text-white py-3 rounded hover:bg-orange-600 transition duration-300">Track Package</button>
           </form>
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-500">Don't have a tracking number? Check your email or <Link to="/contact" className="text-green-600 hover:underline">contact support</Link>.</p>
+            <p className="text-sm text-gray-500">Don't have a tracking number? Check your email or <Link to="/contact" className="text-orange-500 hover:underline">contact support</Link>.</p>
           </div>
         </div>
       </section>

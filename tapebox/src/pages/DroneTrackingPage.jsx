@@ -34,7 +34,7 @@ export default function DroneTrackingPage() {
         iconSize: [size, size], iconAnchor: [size / 2, size / 2],
       })
 
-      L.marker(droneRoute[0], { icon: dot('#16a34a') }).addTo(map).bindPopup('PUD Takeoff Point')
+      L.marker(droneRoute[0], { icon: dot('#f97316') }).addTo(map).bindPopup('PUD Takeoff Point')
       L.marker(droneRoute[droneRoute.length - 1], { icon: dot('#dc2626') }).addTo(map).bindPopup('Destination')
       L.polyline(droneRoute, { color: '#9ca3af', weight: 2, dashArray: '6,6' }).addTo(map)
 
@@ -78,7 +78,7 @@ export default function DroneTrackingPage() {
 
   return (
     <main className="flex-1 w-full">
-      <section className="bg-green-950 text-white py-16 px-6">
+      <section className="bg-orange-950 text-white py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl font-bold mb-4">Track Drone Mission</h1>
           <p className="text-base sm:text-lg leading-relaxed">Monitor your active drone mission in real time.</p>
@@ -91,12 +91,12 @@ export default function DroneTrackingPage() {
           {/* Controls */}
           <div className="lg:col-span-1 space-y-6">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-xl font-medium text-green-700 mb-4">Enter Mission ID</h2>
+              <h2 className="text-xl font-medium text-orange-600 mb-4">Enter Mission ID</h2>
               <form onSubmit={handleTrack} className="space-y-4">
                 <input type="text" placeholder="e.g. TBD-20260512-001" value={missionId}
                   onChange={(e) => setMissionId(e.target.value)} required
-                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
-                <button type="submit" className="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition">
+                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
+                <button type="submit" className="w-full bg-orange-500 text-white py-3 rounded hover:bg-orange-600 transition">
                   Track Mission
                 </button>
               </form>
@@ -104,10 +104,10 @@ export default function DroneTrackingPage() {
 
             {tracking && (
               <div className="bg-white p-6 rounded-lg shadow-md space-y-4">
-                <h3 className="text-lg font-medium text-green-700">Mission Status</h3>
+                <h3 className="text-lg font-medium text-orange-600">Mission Status</h3>
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">Status</span>
-                  <span className={`font-medium ${status === 'Delivered' ? 'text-blue-600' : 'text-green-600'}`}>{status}</span>
+                  <span className={`font-medium ${status === 'Delivered' ? 'text-blue-600' : 'text-orange-500'}`}>{status}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">Mission ID</span>
@@ -119,7 +119,7 @@ export default function DroneTrackingPage() {
                     <span className="font-medium">{Math.round(progress)}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-600 h-2 rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
+                    <div className="bg-orange-500 h-2 rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
                   </div>
                 </div>
                 <div>
@@ -128,7 +128,7 @@ export default function DroneTrackingPage() {
                     <span className={`font-medium ${battery < 30 ? 'text-red-600' : 'text-gray-800'}`}>{battery}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className={`h-2 rounded-full transition-all duration-500 ${battery < 30 ? 'bg-red-500' : 'bg-green-600'}`} style={{ width: `${battery}%` }} />
+                    <div className={`h-2 rounded-full transition-all duration-500 ${battery < 30 ? 'bg-red-500' : 'bg-orange-500'}`} style={{ width: `${battery}%` }} />
                   </div>
                 </div>
                 <div className="flex justify-between text-sm">
@@ -146,7 +146,7 @@ export default function DroneTrackingPage() {
           {/* Map */}
           <div className="lg:col-span-2">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-xl font-medium text-green-700 mb-4">Live Drone Map</h2>
+              <h2 className="text-xl font-medium text-orange-600 mb-4">Live Drone Map</h2>
               <div ref={mapRef} className="w-full rounded-lg border-2 border-gray-200" style={{ minHeight: 400 }}>
                 {!tracking && (
                   <div className="w-full h-96 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500">
