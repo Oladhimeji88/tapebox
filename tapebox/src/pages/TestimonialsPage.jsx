@@ -53,9 +53,9 @@ export default function TestimonialsPage() {
       </section>
 
       {/* CTA strip */}
-      <section className="bg-green-700 py-8 px-6 text-center text-white">
+      <section className="bg-orange-600 py-8 px-6 text-center text-white">
         <p className="text-lg font-medium mb-4">Ready to experience the TapeBox difference?</p>
-        <Link to="/dropbox" className="inline-block bg-white text-green-700 font-bold px-8 py-3 rounded-full hover:bg-green-50 transition">
+        <Link to="/dropbox" className="inline-block bg-white text-orange-600 font-bold px-8 py-3 rounded-full hover:bg-orange-50 transition">
           Book a Delivery
         </Link>
       </section>
@@ -69,7 +69,7 @@ export default function TestimonialsPage() {
                 <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 bg-white/90 rounded-full px-3 py-1.5">
-                  <div className="w-5 h-5 rounded-full bg-green-900 text-white text-xs flex items-center justify-center font-bold">
+                  <div className="w-5 h-5 rounded-full bg-orange-700 text-white text-xs flex items-center justify-center font-bold">
                     {t.name.charAt(0)}
                   </div>
                   <span className="text-xs font-semibold text-gray-800 truncate">{t.name} joined TapeBox</span>
@@ -92,12 +92,12 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Stats */}
-      <section className="bg-green-950 text-white py-12 px-6">
+      <section className="bg-orange-950 text-white py-12 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
           {[['4.9/5', 'Average Rating'], ['10K+', 'Happy Customers'], ['50K+', 'Deliveries'], ['99.9%', 'On-Time Rate']].map(([stat, label]) => (
             <div key={label}>
               <div className="text-3xl font-bold mb-1">{stat}</div>
-              <p className="text-green-300 text-sm">{label}</p>
+              <p className="text-orange-300 text-sm">{label}</p>
             </div>
           ))}
         </div>

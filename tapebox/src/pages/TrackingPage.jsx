@@ -59,7 +59,7 @@ export default function TrackingPage() {
       })
 
       L.marker([9.0579, 7.4951], { icon: dot('#dc2626') }).addTo(map).bindPopup('Delivery Destination<br>Abuja, Nigeria')
-      L.marker([6.5244, 3.3792], { icon: dot('#16a34a') }).addTo(map).bindPopup('Pickup Location<br>Lagos, Nigeria')
+      L.marker([6.5244, 3.3792], { icon: dot('#f97316') }).addTo(map).bindPopup('Pickup Location<br>Lagos, Nigeria')
 
       const truckIcon = L.divIcon({
         className: '',
@@ -117,14 +117,14 @@ export default function TrackingPage() {
           {/* Left panel */}
           <div className="lg:col-span-1">
             <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-              <h2 className="text-xl font-medium text-green-700 mb-6">Enter Tracking Number</h2>
+              <h2 className="text-xl font-medium text-orange-600 mb-6">Enter Tracking Number</h2>
               <form onSubmit={handleTrack} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Tracking Number</label>
                   <input type="text" placeholder="Enter your tracking number" required
-                    className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                    className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                 </div>
-                <button type="submit" className="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition duration-300">
+                <button type="submit" className="w-full bg-orange-500 text-white py-3 rounded hover:bg-orange-600 transition duration-300">
                   Track Package
                 </button>
               </form>
@@ -133,11 +133,11 @@ export default function TrackingPage() {
             {tracked && (
               <>
                 <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-                  <h3 className="text-lg font-medium text-green-700 mb-4">Order Status</h3>
+                  <h3 className="text-lg font-medium text-orange-600 mb-4">Order Status</h3>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-600">Status:</span>
-                      <span className="text-sm font-medium text-green-600">{status}</span>
+                      <span className="text-sm font-medium text-orange-500">{status}</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-600">Estimated Delivery:</span>
@@ -153,13 +153,13 @@ export default function TrackingPage() {
                       <span>Ordered</span><span>Picked Up</span><span>In Transit</span><span>Delivered</span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div className="bg-green-600 h-2 rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
+                      <div className="bg-orange-500 h-2 rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-lg font-medium text-green-700 mb-4">Package Details</h3>
+                  <h3 className="text-lg font-medium text-orange-600 mb-4">Package Details</h3>
                   <div className="space-y-2 text-sm">
                     {[['From:', 'Lagos, Nigeria'], ['To:', 'Abuja, Nigeria'], ['Weight:', '2.5 kg'], ['Service:', 'Express Delivery']].map(([label, value]) => (
                       <div key={label} className="flex justify-between">
@@ -176,7 +176,7 @@ export default function TrackingPage() {
           {/* Map */}
           <div className="lg:col-span-2">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-xl font-medium text-green-700 mb-6">Live Location</h2>
+              <h2 className="text-xl font-medium text-orange-600 mb-6">Live Location</h2>
               <div ref={mapRef} className="w-full rounded-lg border-2 border-gray-200" style={{ minHeight: 400 }}>
                 {!tracked && (
                   <div className="w-full h-96 bg-gray-100 rounded-lg flex items-center justify-center text-gray-500">
@@ -191,13 +191,13 @@ export default function TrackingPage() {
         {/* Updates */}
         {tracked && (
           <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-lg font-medium text-green-700 mb-4">Recent Updates</h3>
+            <h3 className="text-lg font-medium text-orange-600 mb-4">Recent Updates</h3>
             <div className="space-y-3">
               {updates.map((u, i) => (
                 <div key={i} className="flex items-start space-x-3 pb-3 border-b border-gray-100 last:border-b-0">
                   <div className="flex-shrink-0">
-                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <span className="text-green-600 text-xs font-bold">✓</span>
+                    <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                      <span className="text-orange-500 text-xs font-bold">✓</span>
                     </div>
                   </div>
                   <div className="flex-1">

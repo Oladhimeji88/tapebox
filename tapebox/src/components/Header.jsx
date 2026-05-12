@@ -24,14 +24,14 @@ export default function Header() {
   ]
 
   const desktopLinkClass = ({ isActive }) =>
-    `text-sm font-medium transition-colors hover:text-green-400${
-      isActive ? ' text-green-400 underline underline-offset-4' : ' text-white/90'
+    `text-sm font-medium transition-colors hover:text-orange-400${
+      isActive ? ' text-orange-400 underline underline-offset-4' : ' text-white/90'
     }`
 
   const mobileLinkClass = ({ isActive }) =>
     `block py-2.5 px-3 rounded-md text-sm font-medium transition-colors${
       isActive
-        ? ' bg-white/10 text-green-400'
+        ? ' bg-white/10 text-orange-400'
         : ' text-white/90 hover:bg-white/8 hover:text-white'
     }`
 
@@ -56,7 +56,7 @@ export default function Header() {
         {/* Desktop CTA */}
         <NavLink
           to="/dropbox"
-          className="hidden sm:inline-flex shrink-0 items-center bg-green-600 hover:bg-green-500 text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
+          className="hidden sm:inline-flex shrink-0 items-center bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
         >
           Drop a box
         </NavLink>
@@ -100,7 +100,7 @@ export default function Header() {
           <div className="mt-3 pt-3 border-t border-white/10">
             <NavLink
               to="/dropbox"
-              className="block w-full text-center bg-green-600 hover:bg-green-500 text-white text-sm font-semibold px-4 py-2.5 rounded-full transition-colors"
+              className="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2.5 rounded-full transition-colors"
               onClick={() => setMobileOpen(false)}
             >
               Drop a box

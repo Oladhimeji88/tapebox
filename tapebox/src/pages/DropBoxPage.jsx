@@ -22,7 +22,7 @@ export default function DropBoxPage() {
   return (
     <main className="flex-1 w-full">
       {/* Hero */}
-      <section className="bg-green-950 text-white py-16 px-6">
+      <section className="bg-orange-950 text-white py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl font-bold mb-6">Drop a Box</h1>
           <p className="text-base sm:text-lg leading-relaxed">Create a delivery order in just a few clicks. Fast, easy, and affordable shipping for your packages.</p>
@@ -36,7 +36,7 @@ export default function DropBoxPage() {
           {/* Form */}
           <div className="lg:col-span-2">
             <div className="bg-white p-8 rounded-lg shadow-md">
-              <h2 className="text-2xl font-medium text-green-700 mb-8">Order Details</h2>
+              <h2 className="text-2xl font-medium text-orange-600 mb-8">Order Details</h2>
               <form id="dropBoxForm" className="space-y-6" onSubmit={handleSubmit}>
 
                 {/* Sender */}
@@ -45,33 +45,33 @@ export default function DropBoxPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">Full Name *</label>
-                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">Phone Number *</label>
-                      <input type="tel" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      <input type="tel" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                   </div>
                   <div className="mt-4">
                     <label className="block text-gray-700 font-medium mb-2">Email Address *</label>
-                    <input type="email" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                    <input type="email" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                   </div>
                   <div className="mt-4">
                     <label className="block text-gray-700 font-medium mb-2">Pickup Address *</label>
-                    <input type="text" required placeholder="Street address" className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                    <input type="text" required placeholder="Street address" className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">City *</label>
-                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">State *</label>
-                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">ZIP Code *</label>
-                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                   </div>
                 </div>
@@ -82,29 +82,29 @@ export default function DropBoxPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">Full Name *</label>
-                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">Phone Number *</label>
-                      <input type="tel" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      <input type="tel" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                   </div>
                   <div className="mt-4">
                     <label className="block text-gray-700 font-medium mb-2">Delivery Address *</label>
-                    <input type="text" required placeholder="Street address" className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                    <input type="text" required placeholder="Street address" className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">City *</label>
-                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">State *</label>
-                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">ZIP Code *</label>
-                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      <input type="text" required className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                   </div>
                 </div>
@@ -117,23 +117,23 @@ export default function DropBoxPage() {
                       <label className="block text-gray-700 font-medium mb-2">Weight (kg) *</label>
                       <input type="number" min="0.1" step="0.1" required value={weight}
                         onChange={(e) => setWeight(e.target.value)}
-                        className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                        className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                     <div>
                       <label className="block text-gray-700 font-medium mb-2">Dimensions (L×W×H cm)</label>
                       <input type="text" placeholder="30 x 20 x 15"
-                        className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                        className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                     </div>
                   </div>
                   <div className="mt-4">
                     <label className="block text-gray-700 font-medium mb-2">Package Description *</label>
                     <textarea rows="3" required placeholder="What's inside? (e.g., Electronics, Documents, Clothing)"
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                   </div>
                   <div className="mt-4">
                     <label className="block text-gray-700 font-medium mb-2">Declared Value (₦) *</label>
                     <input type="number" min="0" step="0.01" required
-                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-green-500" />
+                      className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500" />
                   </div>
                 </div>
 
@@ -147,11 +147,11 @@ export default function DropBoxPage() {
                       { value: 'sameday', label: 'Same Day Delivery', sub: 'Within 24 hours (select areas)' },
                     ].map((opt) => (
                       <label key={opt.value}
-                        className={`flex items-center p-4 border rounded cursor-pointer ${deliveryType === opt.value ? 'border-green-600 bg-green-50' : 'border-gray-200 hover:bg-gray-50'}`}>
+                        className={`flex items-center p-4 border rounded cursor-pointer ${deliveryType === opt.value ? 'border-orange-500 bg-orange-50' : 'border-gray-200 hover:bg-gray-50'}`}>
                         <input type="radio" name="deliveryType" value={opt.value}
                           checked={deliveryType === opt.value}
                           onChange={() => setDeliveryType(opt.value)}
-                          className="w-4 h-4 text-green-600" />
+                          className="w-4 h-4 text-orange-500" />
                         <span className="ml-3">
                           <span className="font-medium text-gray-900">{opt.label}</span>
                           <span className="block text-sm text-gray-600">{opt.sub}</span>
@@ -166,15 +166,15 @@ export default function DropBoxPage() {
                   <h3 className="text-lg font-medium text-gray-900 mb-4">5. Additional Services</h3>
                   <div className="space-y-3">
                     <label className="flex items-center">
-                      <input type="checkbox" checked={insurance} onChange={(e) => setInsurance(e.target.checked)} className="w-4 h-4 text-green-600 rounded" />
+                      <input type="checkbox" checked={insurance} onChange={(e) => setInsurance(e.target.checked)} className="w-4 h-4 text-orange-500 rounded" />
                       <span className="ml-3 text-gray-700">Full Insurance Coverage (+₦4,485)</span>
                     </label>
                     <label className="flex items-center">
-                      <input type="checkbox" checked={signature} onChange={(e) => setSignature(e.target.checked)} className="w-4 h-4 text-green-600 rounded" />
+                      <input type="checkbox" checked={signature} onChange={(e) => setSignature(e.target.checked)} className="w-4 h-4 text-orange-500 rounded" />
                       <span className="ml-3 text-gray-700">Signature Required (+₦2,985)</span>
                     </label>
                     <label className="flex items-center">
-                      <input type="checkbox" defaultChecked readOnly className="w-4 h-4 text-green-600 rounded" />
+                      <input type="checkbox" defaultChecked readOnly className="w-4 h-4 text-orange-500 rounded" />
                       <span className="ml-3 text-gray-700">Advanced Tracking (Included)</span>
                     </label>
                   </div>
@@ -185,7 +185,7 @@ export default function DropBoxPage() {
                     className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded hover:bg-gray-50 transition">
                     Clear Form
                   </button>
-                  <button type="submit" className="flex-1 px-6 py-3 bg-green-600 text-white font-medium rounded hover:bg-green-700 transition">
+                  <button type="submit" className="flex-1 px-6 py-3 bg-orange-500 text-white font-medium rounded hover:bg-orange-600 transition">
                     Continue to Payment
                   </button>
                 </div>
@@ -196,7 +196,7 @@ export default function DropBoxPage() {
           {/* Sidebar */}
           <div className="lg:col-span-1">
             <div className="bg-gray-50 p-6 rounded-lg shadow-md sticky top-24">
-              <h3 className="text-xl font-medium text-green-700 mb-6">Order Summary</h3>
+              <h3 className="text-xl font-medium text-orange-600 mb-6">Order Summary</h3>
               <div className="space-y-4 mb-6 pb-6 border-b">
                 <div className="flex justify-between text-gray-700"><span>Base Rate:</span><span>{fmt(BASE_RATE)}</span></div>
                 <div className="flex justify-between text-gray-700"><span>Weight Charge:</span><span>{fmt(weightCharge)}</span></div>
@@ -206,16 +206,16 @@ export default function DropBoxPage() {
               </div>
               <div className="flex justify-between items-center mb-6">
                 <span className="text-lg font-medium text-gray-900">Total:</span>
-                <span className="text-3xl font-bold text-green-700">{fmt(total)}</span>
+                <span className="text-3xl font-bold text-orange-600">{fmt(total)}</span>
               </div>
-              <div className="bg-white p-4 rounded border border-green-200 mb-6">
+              <div className="bg-white p-4 rounded border border-orange-200 mb-6">
                 <p className="text-sm text-gray-700"><span className="font-medium">💡 Tip:</span> Packages up to 5kg qualify for our Basic plan at just ₦5,000</p>
               </div>
               <div className="space-y-2">
                 <h4 className="font-medium text-gray-900 mb-3">Included Features:</h4>
                 <ul className="space-y-2 text-sm text-gray-700">
                   {['Real-time tracking', 'Basic insurance (₦150,000)', 'Pickup & Delivery', 'Email notifications'].map((f) => (
-                    <li key={f} className="flex items-start"><span className="text-green-600 mr-2">✓</span><span>{f}</span></li>
+                    <li key={f} className="flex items-start"><span className="text-orange-500 mr-2">✓</span><span>{f}</span></li>
                   ))}
                 </ul>
               </div>
@@ -227,7 +227,7 @@ export default function DropBoxPage() {
       {/* FAQ */}
       <section className="bg-gray-50 py-12">
         <div className="max-w-4xl mx-auto p-8">
-          <h2 className="text-3xl font-medium text-green-700 text-center mb-12">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-medium text-orange-600 text-center mb-12">Frequently Asked Questions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { q: 'How long does delivery take?', a: 'Standard delivery takes 2-3 business days. Express is next business day, and same-day delivery is available in select areas.' },

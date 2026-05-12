@@ -2,7 +2,7 @@ export default function AboutPage() {
   return (
     <main className="flex-1 w-full">
       {/* Hero */}
-      <section className="bg-green-950 text-white py-16 px-6">
+      <section className="bg-orange-950 text-white py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-4xl font-bold mb-6">About TapeBox</h1>
           <p className="text-base sm:text-lg leading-relaxed">
@@ -13,14 +13,14 @@ export default function AboutPage() {
 
       {/* Our Story */}
       <section className="max-w-4xl mx-auto p-8 my-12">
-        <h2 className="text-2xl sm:text-3xl text-green-700 font-medium mb-8">Our Story</h2>
+        <h2 className="text-2xl sm:text-3xl text-orange-600 font-medium mb-8">Our Story</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <p className="text-gray-700 mb-4">TapeBox was founded in 2020 with a simple vision: to make delivery services accessible, affordable, and reliable for everyone. What started as a small operation has grown into a trusted partner for thousands of customers.</p>
             <p className="text-gray-700 mb-4">Our team of dedicated professionals works tirelessly to ensure that every package reaches its destination safely and on time. We've built our reputation on trust, transparency, and exceptional service.</p>
             <p className="text-gray-700">Today, TapeBox operates across multiple cities, serving individuals and businesses with the same commitment to excellence that defined us from day one.</p>
           </div>
-          <div className="bg-green-100 rounded-lg p-4">
+          <div className="bg-orange-100 rounded-lg p-4">
             <img src="/images/Hero-image.jpg" alt="Our Team" className="w-full h-full object-cover rounded" />
           </div>
         </div>
@@ -29,7 +29,7 @@ export default function AboutPage() {
       {/* Core Values */}
       <section className="bg-gray-50 py-12">
         <div className="max-w-4xl mx-auto p-8">
-          <h2 className="text-2xl sm:text-3xl text-green-700 font-medium text-center mb-12">Our Core Values</h2>
+          <h2 className="text-2xl sm:text-3xl text-orange-600 font-medium text-center mb-12">Our Core Values</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {[
               { icon: '🚚', title: 'Reliability', desc: 'We deliver on our promises, every single time. Your package is our responsibility.' },
@@ -38,7 +38,7 @@ export default function AboutPage() {
             ].map((v) => (
               <div key={v.title} className="bg-white p-6 rounded-lg shadow-md text-center">
                 <div className="text-4xl mb-4">{v.icon}</div>
-                <h3 className="text-xl font-medium text-green-700 mb-3">{v.title}</h3>
+                <h3 className="text-xl font-medium text-orange-600 mb-3">{v.title}</h3>
                 <p className="text-gray-600">{v.desc}</p>
               </div>
             ))}
@@ -48,7 +48,7 @@ export default function AboutPage() {
 
       {/* Why Choose Us */}
       <section className="max-w-4xl mx-auto p-8 my-12">
-        <h2 className="text-2xl sm:text-3xl text-green-700 font-medium text-center mb-12">Why Choose TapeBox?</h2>
+        <h2 className="text-2xl sm:text-3xl text-orange-600 font-medium text-center mb-12">Why Choose TapeBox?</h2>
         <div className="space-y-6">
           {[
             { title: 'Same Day Delivery Available', desc: "Need your package delivered today? We've got you covered with our same-day delivery service in select areas." },
@@ -58,7 +58,7 @@ export default function AboutPage() {
           ].map((item) => (
             <div key={item.title} className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-green-600 text-white font-bold text-lg">✓</div>
+                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white font-bold text-lg">✓</div>
               </div>
               <div>
                 <h3 className="text-xl font-medium text-gray-900 mb-2">{item.title}</h3>
@@ -70,7 +70,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="bg-green-700 text-white py-12">
+      <section className="bg-orange-600 text-white py-12">
         <div className="max-w-4xl mx-auto p-8">
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 text-center">
             {[
@@ -81,7 +81,7 @@ export default function AboutPage() {
             ].map((s) => (
               <div key={s.label}>
                 <div className="text-4xl font-bold mb-2">{s.stat}</div>
-                <p className="text-green-100">{s.label}</p>
+                <p className="text-orange-100">{s.label}</p>
               </div>
             ))}
           </div>
