@@ -37,7 +37,7 @@ export default function Header() {
 
   return (
     <header className="bg-black text-white sticky top-0 z-50 w-full border-b border-white/10 shadow-md">
-      <div className="max-w-4xl mx-auto px-5 h-20 flex items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between gap-8">
 
         {/* Logo */}
         <Link to="/" aria-label="TapeBox Home" className="shrink-0">
@@ -45,10 +45,10 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden sm:flex items-center gap-6" aria-label="main">
+        <nav className="hidden lg:flex items-center gap-8" aria-label="main">
           {navLinks.map((l) => (
             <NavLink key={l.to} to={l.to} end={l.to === '/'} className={desktopLinkClass}>
-              {l.label}
+              <span className="whitespace-nowrap">{l.label}</span>
             </NavLink>
           ))}
         </nav>
@@ -56,7 +56,7 @@ export default function Header() {
         {/* Desktop CTA */}
         <NavLink
           to="/dropbox"
-          className="hidden sm:inline-flex shrink-0 items-center bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
+          className="hidden lg:inline-flex shrink-0 items-center bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors whitespace-nowrap"
         >
           Drop a box
         </NavLink>
@@ -64,7 +64,7 @@ export default function Header() {
         {/* Mobile hamburger / close */}
         <button
           id="mobile-menu-btn"
-          className="sm:hidden ml-auto text-white focus:outline-none"
+          className="lg:hidden ml-auto text-white focus:outline-none"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={mobileOpen}
@@ -83,7 +83,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div id="mobile-menu" className="sm:hidden border-t border-white/10 bg-black px-4 pb-4 pt-2">
+        <div id="mobile-menu" className="lg:hidden border-t border-white/10 bg-black px-4 pb-4 pt-2">
           <nav className="flex flex-col gap-1">
             {navLinks.map((l) => (
               <NavLink
