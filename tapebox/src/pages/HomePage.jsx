@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const testimonialItems = [
@@ -309,6 +309,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Cost Estimator */}
+      <CostEstimator />
 
       {/* Pricing */}
       <section className="pricing-wrap scroll-reveal post-hero-section">

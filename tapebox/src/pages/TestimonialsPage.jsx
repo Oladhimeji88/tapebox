@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import StatCounter from '../components/StatCounter'
 
 const testimonials = [
   {
@@ -94,10 +95,17 @@ export default function TestimonialsPage() {
       {/* Stats */}
       <section className="bg-orange-950 text-white py-12 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
-          {[['4.9/5', 'Average Rating'], ['10K+', 'Happy Customers'], ['50K+', 'Deliveries'], ['99.9%', 'On-Time Rate']].map(([stat, label]) => (
-            <div key={label}>
-              <div className="text-3xl font-bold mb-1">{stat}</div>
-              <p className="text-orange-300 text-sm">{label}</p>
+          {[
+            { end: 4.9, suffix: '/5', decimals: 1, label: 'Average Rating' },
+            { end: 10, suffix: 'K+', label: 'Happy Customers' },
+            { end: 50, suffix: 'K+', label: 'Deliveries' },
+            { end: 99.9, suffix: '%', decimals: 1, label: 'On-Time Rate' },
+          ].map((s) => (
+            <div key={s.label}>
+              <div className="text-3xl font-bold mb-1">
+                <StatCounter end={s.end} suffix={s.suffix} decimals={s.decimals ?? 0} />
+              </div>
+              <p className="text-orange-300 text-sm">{s.label}</p>
             </div>
           ))}
         </div>

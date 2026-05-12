@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, ScrollRestoration } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import FloatingCTA from './components/FloatingCTA'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
@@ -35,6 +36,7 @@ export default function App() {
           </Routes>
         </div>
         <Footer />
+        <FloatingCTA />
       </div>
     </BrowserRouter>
   )

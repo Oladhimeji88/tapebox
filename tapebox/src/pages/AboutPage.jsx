@@ -1,3 +1,5 @@
+import StatCounter from '../components/StatCounter'
+
 export default function AboutPage() {
   return (
     <main className="flex-1 w-full">
@@ -74,13 +76,15 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto p-8">
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 text-center">
             {[
-              { stat: '10K+', label: 'Happy Customers' },
-              { stat: '50K+', label: 'Packages Delivered' },
-              { stat: '99.9%', label: 'On-Time Rate' },
-              { stat: '6+', label: 'Years Experience' },
+              { end: 10, suffix: 'K+', label: 'Happy Customers' },
+              { end: 50, suffix: 'K+', label: 'Packages Delivered' },
+              { end: 99.9, suffix: '%', decimals: 1, label: 'On-Time Rate' },
+              { end: 6, suffix: '+', label: 'Years Experience' },
             ].map((s) => (
               <div key={s.label}>
-                <div className="text-4xl font-bold mb-2">{s.stat}</div>
+                <div className="text-4xl font-bold mb-2">
+                  <StatCounter end={s.end} suffix={s.suffix} decimals={s.decimals ?? 0} />
+                </div>
                 <p className="text-orange-100">{s.label}</p>
               </div>
             ))}
