@@ -95,10 +95,16 @@ export default function TrackingPage() {
     }
   }
 
+  const [mapLoading, setMapLoading] = useState(false)
+
   const handleTrack = (e) => {
     e.preventDefault()
     setTracked(true)
-    setTimeout(initMap, 200)
+    setMapLoading(true)
+    setTimeout(() => {
+      initMap()
+      setTimeout(() => setMapLoading(false), 800)
+    }, 200)
   }
 
   return (
@@ -130,7 +136,27 @@ export default function TrackingPage() {
               </form>
             </div>
 
-            {tracked && (
+            {tracked && mapLoading && (
+              <>
+                <div className="bg-white p-6 rounded-lg shadow-md mb-6 space-y-4">
+                  <div className="skeleton h-5 w-32 rounded" />
+                  <div className="space-y-3">
+                    <div className="flex justify-between"><div className="skeleton h-4 w-16 rounded" /><div className="skeleton h-4 w-20 rounded" /></div>
+                    <div className="flex justify-between"><div className="skeleton h-4 w-28 rounded" /><div className="skeleton h-4 w-24 rounded" /></div>
+                    <div className="flex justify-between"><div className="skeleton h-4 w-20 rounded" /><div className="skeleton h-4 w-14 rounded" /></div>
+                  </div>
+                  <div className="skeleton h-2 w-full rounded-full mt-4" />
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md space-y-3">
+                  <div className="skeleton h-5 w-36 rounded" />
+                  {[1,2,3,4].map(i => (
+                    <div key={i} className="flex justify-between"><div className="skeleton h-4 w-12 rounded" /><div className="skeleton h-4 w-28 rounded" /></div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {tracked && !mapLoading && (
               <>
                 <div className="bg-white p-6 rounded-lg shadow-md mb-6">
                   <h3 className="text-lg font-medium text-orange-600 mb-4">Order Status</h3>
@@ -188,8 +214,24 @@ export default function TrackingPage() {
           </div>
         </div>
 
+        {/* Updates skeleton */}
+        {tracked && mapLoading && (
+          <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <div className="skeleton h-5 w-36 rounded mb-4" />
+            {[1,2,3].map(i => (
+              <div key={i} className="flex items-start space-x-3 pb-3 border-b border-gray-100 last:border-b-0">
+                <div className="skeleton w-8 h-8 rounded-full flex-shrink-0" />
+                <div className="flex-1 space-y-2">
+                  <div className="skeleton h-4 w-3/4 rounded" />
+                  <div className="skeleton h-3 w-1/2 rounded" />
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
         {/* Updates */}
-        {tracked && (
+        {tracked && !mapLoading && (
           <div className="mt-8 bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-lg font-medium text-orange-600 mb-4">Recent Updates</h3>
             <div className="space-y-3">

@@ -377,3 +377,119 @@ export default function HomePage() {
     </main>
   )
 }
+
+// ── Cost Estimator ──────────────────────────────────────────────
+const CITIES = ['Lagos','Abuja','Port Harcourt','Kano','Ibadan','Kaduna','Enugu','Benin City','Ilorin','Jos','Calabar','Owerri']
+
+const ZONE = {
+  Lagos: 0, Ibadan: 0, Ilorin: 0,
+  'Port Harcourt': 1, 'Benin City': 1, Calabar: 1,
+  Enugu: 2, Owerri: 2,
+  Abuja: 3, Jos: 3,
+  Kano: 4, Kaduna: 4,
+}
+
+const DELIVERY_SURCHARGE = { standard: 0, express: 5985, sameday: 14985 }
+const DELIVERY_LABEL = { standard: '2–3 business days', express: 'Next business day', sameday: 'Within 24 hours' }
+
+function getBaseRate(from, to) {
+  if (!from || !to || from === to) return null
+  const diff = Math.abs(ZONE[from] - ZONE[to])
+  if (diff === 0) return 3490
+  if (diff === 1) return 4990
+  return 7490
+}
+
+function fmt(n) { return '₦' + n.toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) }
+
+function CostEstimator() {
+  const [from, setFrom] = useState('')
+  const [to, setTo] = useState('')
+  const [weight, setWeight] = useState('')
+  const [type, setType] = useState('standard')
+
+  const w = parseFloat(weight) || 0
+  const base = getBaseRate(from, to)
+  const weightCharge = Math.max(0, (w - 5)) * 2250
+  const deliverySurcharge = DELIVERY_SURCHARGE[type]
+  const total = base !== null ? base + weightCharge + deliverySurcharge : null
+  const hasResult = total !== null && w > 0
+
+  return (
+    <section className="estimator-wrap scroll-reveal post-hero-section">
+      <div className="estimator-shell">
+        <p className="services-eyebrow">Instant Quote</p>
+        <h2 className="estimator-title">How much will it cost?</h2>
+        <p className="estimator-subtitle">Get a live delivery estimate — no sign-up required.</p>
+
+        <div className="estimator-card">
+          <div className="estimator-form">
+            <div className="estimator-field">
+              <label className="estimator-label">From</label>
+              <select value={from} onChange={e => setFrom(e.target.value)} className="estimator-select">
+                <option value="">Select origin city</option>
+                {CITIES.map(c => <option key={c} value={c}>{c}</option>)}
+              </select>
+            </div>
+
+            <div className="estimator-swap-col">
+              <button type="button" className="estimator-swap" onClick={() => { const tmp = from; setFrom(to); setTo(tmp) }} aria-label="Swap cities">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+              </button>
+            </div>
+
+            <div className="estimator-field">
+              <label className="estimator-label">To</label>
+              <select value={to} onChange={e => setTo(e.target.value)} className="estimator-select">
+                <option value="">Select destination city</option>
+                {CITIES.filter(c => c !== from).map(c => <option key={c} value={c}>{c}</option>)}
+              </select>
+            </div>
+
+            <div className="estimator-field">
+              <label className="estimator-label">Weight (kg)</label>
+              <input type="number" min="0.1" step="0.1" placeholder="e.g. 2.5" value={weight}
+                onChange={e => setWeight(e.target.value)} className="estimator-select" />
+            </div>
+
+            <div className="estimator-field estimator-field--full">
+              <label className="estimator-label">Delivery Speed</label>
+              <div className="estimator-type-row">
+                {['standard','express','sameday'].map(t => (
+                  <button key={t} type="button"
+                    className={`estimator-type-btn${type === t ? ' estimator-type-btn--active' : ''}`}
+                    onClick={() => setType(t)}>
+                    {t === 'standard' ? 'Standard' : t === 'express' ? 'Express' : 'Same Day'}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className={`estimator-result${hasResult ? ' estimator-result--show' : ''}`}>
+            {!hasResult ? (
+              <div className="estimator-placeholder">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="estimator-placeholder-icon">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <p>Fill in the fields to see your instant quote</p>
+              </div>
+            ) : (
+              <>
+                <p className="estimator-result-label">Estimated Total</p>
+                <p className="estimator-result-price">{fmt(total)}</p>
+                <p className="estimator-result-eta">{DELIVERY_LABEL[type]}</p>
+                <div className="estimator-breakdown">
+                  <div className="estimator-row"><span>Base rate ({from} → {to})</span><span>{fmt(base)}</span></div>
+                  {weightCharge > 0 && <div className="estimator-row"><span>Weight surcharge ({w}kg)</span><span>{fmt(weightCharge)}</span></div>}
+                  {deliverySurcharge > 0 && <div className="estimator-row"><span>{type === 'express' ? 'Express' : 'Same Day'} upgrade</span><span>{fmt(deliverySurcharge)}</span></div>}
+                </div>
+                <Link to="/dropbox" className="estimator-cta">Book this delivery →</Link>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
