@@ -9,13 +9,18 @@ const testimonialItems = [
   { quote: 'We started using TapeBox for weekend orders in Ikeja, and the speed gave our business a serious edge over competitors.', name: 'Bolanle Ogunleye, Ikeja' },
 ]
 
+// avatar position → testimonialItems index (-1 = decorative only)
+const AVATAR_IDX = [2, 1, 0, 0, 3, 4]
+const AUTOPLAY_MS = 5000
+
 export default function HomePage() {
   const typewriterRef = useRef(null)
-  const testimonialIndexRef = useRef(0)
-  const quoteRef = useRef(null)
-  const nameRef = useRef(null)
   const deliverySectionRef = useRef(null)
   const deliveryTitleRef = useRef(null)
+
+  const [tIdx, setTIdx] = useState(0)
+  const [tPaused, setTPaused] = useState(false)
+  const [tProgress, setTProgress] = useState(0)
 
   // Typewriter effect
   useEffect(() => {
@@ -89,19 +94,23 @@ export default function HomePage() {
     return () => { window.removeEventListener('scroll', request); window.removeEventListener('resize', request) }
   }, [])
 
-  // Testimonial carousel
-  const cycleTestimonial = (step) => {
-    const idx = (testimonialIndexRef.current + step + testimonialItems.length) % testimonialItems.length
-    testimonialIndexRef.current = idx
-    const q = quoteRef.current, n = nameRef.current
-    if (!q || !n) return
-    q.classList.add('is-changing'); n.classList.add('is-changing')
-    setTimeout(() => {
-      q.textContent = testimonialItems[idx].quote
-      n.textContent = testimonialItems[idx].name
-      q.classList.remove('is-changing'); n.classList.remove('is-changing')
-    }, 150)
-  }
+  // Testimonial auto-advance
+  useEffect(() => {
+    if (tPaused) return
+    setTProgress(0)
+    const start = performance.now()
+    let raf
+    const tick = (now) => {
+      const p = Math.min(((now - start) / AUTOPLAY_MS) * 100, 100)
+      setTProgress(p)
+      if (p < 100) raf = requestAnimationFrame(tick)
+      else setTIdx(i => (i + 1) % testimonialItems.length)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [tIdx, tPaused])
+
+  const goTo = (n) => { setTIdx((n + testimonialItems.length) % testimonialItems.length); setTProgress(0) }
 
   return (
     <main className="w-full flex flex-col items-center">
