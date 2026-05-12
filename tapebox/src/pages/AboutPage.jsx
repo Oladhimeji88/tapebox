@@ -34,12 +34,45 @@ export default function AboutPage() {
           <h2 className="text-2xl sm:text-3xl text-orange-600 font-medium text-center mb-12">Our Core Values</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {[
-              { icon: '🚚', title: 'Reliability', desc: 'We deliver on our promises, every single time. Your package is our responsibility.' },
-              { icon: '💰', title: 'Affordability', desc: "Quality delivery doesn't have to be expensive. We offer competitive rates for everyone." },
-              { icon: '🛡️', title: 'Security', desc: 'Your items are insured and handled with the utmost care and attention.' },
+              {
+                title: 'Reliability',
+                desc: 'We deliver on our promises, every single time. Your package is our responsibility.',
+                icon: (
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mx-auto">
+                    <rect x="4" y="16" width="28" height="20" rx="3" fill="#fff7ed" stroke="#f97316" strokeWidth="2"/>
+                    <path d="M32 22h6l6 8v6h-12V22z" fill="#fff7ed" stroke="#f97316" strokeWidth="2" strokeLinejoin="round"/>
+                    <circle cx="13" cy="38" r="4" fill="#f97316"/>
+                    <circle cx="37" cy="38" r="4" fill="#f97316"/>
+                    <path d="M10 24h12" stroke="#f97316" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M10 29h8" stroke="#fdba74" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                ),
+              },
+              {
+                title: 'Affordability',
+                desc: "Quality delivery doesn't have to be expensive. We offer competitive rates for everyone.",
+                icon: (
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mx-auto">
+                    <circle cx="24" cy="24" r="19" fill="#fff7ed" stroke="#f97316" strokeWidth="2"/>
+                    <path d="M24 12v2M24 34v2" stroke="#f97316" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M18 20c0-3.314 2.686-6 6-6s6 2.686 6 6c0 2-1.5 3.5-4 4.5-2.5 1-4 2.5-4 4.5 0 3.314 2.686 6 6 6" stroke="#f97316" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M30 28c0 3.314-2.686 6-6 6" stroke="#fdba74" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                ),
+              },
+              {
+                title: 'Security',
+                desc: 'Your items are insured and handled with the utmost care and attention.',
+                icon: (
+                  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 mx-auto">
+                    <path d="M24 4L8 11v14c0 9.941 6.857 19.239 16 22 9.143-2.761 16-12.059 16-25V11L24 4z" fill="#fff7ed" stroke="#f97316" strokeWidth="2" strokeLinejoin="round"/>
+                    <path d="M17 24l5 5 9-9" stroke="#f97316" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+              },
             ].map((v) => (
               <div key={v.title} className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="text-4xl mb-4">{v.icon}</div>
+                <div className="mb-4">{v.icon}</div>
                 <h3 className="text-xl font-medium text-orange-600 mb-3">{v.title}</h3>
                 <p className="text-gray-600">{v.desc}</p>
               </div>
