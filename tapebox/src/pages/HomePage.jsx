@@ -254,33 +254,43 @@ export default function HomePage() {
             <span className="testimonial-dot testimonial-avatar-hide-mobile" style={{ left: '72.8%', top: '80%' }} />
             <span className="testimonial-dot" style={{ left: '91.2%', top: '47%' }} />
 
-            <figure className="testimonial-avatar testimonial-avatar-sm testimonial-avatar-hide-mobile" style={{ left: '14%', top: '30%' }}>
+            <figure className={`testimonial-avatar testimonial-avatar-sm testimonial-avatar-hide-mobile${AVATAR_IDX[0] === tIdx ? ' testimonial-avatar--active' : ''}`} style={{ left: '14%', top: '30%' }}>
               <img src="/images/image_fx_ - 2025-03-21T000557.454.jpg" alt="Customer testimonial" />
             </figure>
-            <figure className="testimonial-avatar testimonial-avatar-md" style={{ left: '27.8%', top: '58%' }}>
+            <figure className={`testimonial-avatar testimonial-avatar-md${AVATAR_IDX[1] === tIdx ? ' testimonial-avatar--active' : ''}`} style={{ left: '27.8%', top: '58%' }}>
               <img src="/images/image_fx_ - 2025-03-21T000739.722.jpg" alt="Customer testimonial" />
             </figure>
-            <figure className="testimonial-avatar testimonial-avatar-md" style={{ left: '40.8%', top: '30%' }}>
+            <figure className={`testimonial-avatar testimonial-avatar-md${AVATAR_IDX[2] === tIdx ? ' testimonial-avatar--active' : ''}`} style={{ left: '40.8%', top: '30%' }}>
               <img src="/images/image_fx_ - 2025-03-21T000555.243.jpg" alt="Customer testimonial" />
             </figure>
-            <figure className="testimonial-avatar testimonial-avatar-lg" style={{ left: '52.8%', top: '41%' }}>
+            <figure className={`testimonial-avatar testimonial-avatar-lg${AVATAR_IDX[3] === tIdx ? ' testimonial-avatar--active' : ''}`} style={{ left: '52.8%', top: '41%' }}>
               <img src="/images/image_fx_ - 2025-03-21T000824.037.jpg" alt="Customer testimonial" />
             </figure>
-            <figure className="testimonial-avatar testimonial-avatar-md" style={{ left: '66.4%', top: '37%' }}>
+            <figure className={`testimonial-avatar testimonial-avatar-md${AVATAR_IDX[4] === tIdx ? ' testimonial-avatar--active' : ''}`} style={{ left: '66.4%', top: '37%' }}>
               <img src="/images/image_fx_ - 2025-03-21T000929.031.jpg" alt="Customer testimonial" />
             </figure>
-            <figure className="testimonial-avatar testimonial-avatar-md" style={{ left: '86%', top: '30%' }}>
+            <figure className={`testimonial-avatar testimonial-avatar-md${AVATAR_IDX[5] === tIdx ? ' testimonial-avatar--active' : ''}`} style={{ left: '86%', top: '30%' }}>
               <img src="/images/image_fx_ - 2025-03-21T001001.795.jpg" alt="Customer testimonial" />
             </figure>
           </div>
 
-          <div className="testimonial-quote-row">
-            <button type="button" className="testimonial-arrow" aria-label="Previous testimonial" onClick={() => cycleTestimonial(-1)}>&lt;</button>
+          <div className="testimonial-quote-row" onMouseEnter={() => setTPaused(true)} onMouseLeave={() => setTPaused(false)}>
+            <button type="button" className="testimonial-arrow" aria-label="Previous testimonial" onClick={() => goTo(tIdx - 1)}>&lt;</button>
             <div className="testimonial-copy-stack">
-              <p ref={quoteRef} className="testimonial-quote" aria-live="polite">{testimonialItems[0].quote}</p>
-              <p ref={nameRef} className="testimonial-name" aria-live="polite">{testimonialItems[0].name}</p>
+              <p className="testimonial-quote" aria-live="polite">{testimonialItems[tIdx].quote}</p>
+              <p className="testimonial-name" aria-live="polite">{testimonialItems[tIdx].name}</p>
+              <div className="testimonial-progress-bar">
+                <div className="testimonial-progress-fill" style={{ width: `${tProgress}%` }} />
+              </div>
+              <div className="testimonial-dots">
+                {testimonialItems.map((_, i) => (
+                  <button key={i} type="button" aria-label={`Go to testimonial ${i + 1}`}
+                    className={`testimonial-dot-btn${i === tIdx ? ' testimonial-dot-btn--active' : ''}`}
+                    onClick={() => goTo(i)} />
+                ))}
+              </div>
             </div>
-            <button type="button" className="testimonial-arrow" aria-label="Next testimonial" onClick={() => cycleTestimonial(1)}>&gt;</button>
+            <button type="button" className="testimonial-arrow" aria-label="Next testimonial" onClick={() => goTo(tIdx + 1)}>&gt;</button>
           </div>
         </div>
       </section>
