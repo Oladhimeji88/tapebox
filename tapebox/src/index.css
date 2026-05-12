@@ -615,13 +615,14 @@
 }
 .drone-showcase-button:hover { transform: translateY(-1px); filter: brightness(1.04); box-shadow: 0 16px 30px rgba(241,90,34,0.4); }
 .drone-showcase-visual {
-  position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: flex-end; padding: 0 1.2rem 1.3rem;
+  position: relative; z-index: 1; display: flex; align-items: center; justify-content: flex-end; padding: 0 1.2rem;
 }
 .drone-showcase-main {
   --drone-offset: 8%;
+  --drone-rise: -18%;
   width: min(132%, 900px);
   filter: brightness(0.9) contrast(1.08) saturate(0.95) drop-shadow(0 22px 36px rgba(0,0,0,0.52));
-  transform: translateX(var(--drone-offset));
+  transform: translateX(var(--drone-offset)) translateY(var(--drone-rise));
   animation: drone-float 7.2s ease-in-out infinite;
 }
 @media (min-width: 900px) {
@@ -698,8 +699,8 @@
   100% { opacity: 1; filter: blur(0);   transform: translateY(0) rotate(0deg) scale(1); }
 }
 @keyframes drone-float {
-  0%,100% { transform: translateX(var(--drone-offset)) translateY(0); }
-  50%     { transform: translateX(var(--drone-offset)) translateY(-18px); }
+  0%,100% { transform: translateX(var(--drone-offset)) translateY(var(--drone-rise)); }
+  50%     { transform: translateX(var(--drone-offset)) translateY(calc(var(--drone-rise) - 22px)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
