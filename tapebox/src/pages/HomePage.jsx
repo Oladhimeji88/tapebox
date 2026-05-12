@@ -185,32 +185,44 @@ export default function HomePage() {
       {/* Services */}
       <section id="services" className="services-wrap scroll-reveal post-hero-section">
         <div className="services-shell">
+          <p className="services-eyebrow">Our Services</p>
           <h2 className="services-title">Ship faster and smarter with TapeBox services</h2>
+          <p className="services-subtitle">Everything you need for reliable, modern delivery — from real-time tracking to drone last-mile.</p>
           <div className="services-grid">
+
             <article className="service-item">
-              <svg className="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6" d="M7 11.5V9.75a2.75 2.75 0 115.5 0v1.75m0 0V14a2.5 2.5 0 105 0v-2.5a1.5 1.5 0 00-3 0V14a.5.5 0 11-1 0v-2.5H7zM7 11.5H5.5A2.5 2.5 0 003 14v2.25A2.75 2.75 0 005.75 19H11" />
-              </svg>
+              <div className="service-icon-wrap">
+                <svg className="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+              </div>
               <h3 className="service-name">Real-Time Package Tracking</h3>
               <p className="service-copy">Track every shipment from pickup to doorstep with live status updates and instant delivery alerts.</p>
+              <Link to="/tracking" className="service-link">Track a package →</Link>
             </article>
 
             <article className="service-item">
-              <svg className="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" d="M3.5 10.5L14 5.5l2 5-10.5 5-2-5zM13.5 7.5l4 4M5.5 15.5l3 6M9.8 13.4l2.2 5" />
-              </svg>
+              <div className="service-icon-wrap">
+                <svg className="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+              </div>
               <h3 className="service-name">Smart DropBox Pickup Points</h3>
               <p className="service-copy">Use secure TapeBox drop points to speed up handoffs, reduce failed deliveries, and keep parcels safe.</p>
+              <Link to="/dropbox" className="service-link">Drop a box →</Link>
             </article>
 
             <article className="service-item">
-              <svg className="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.7" d="M3 19.5h18M6.5 19.5v-5M11 19.5V9.5M15.5 19.5v-7M20 19.5v-3.5" />
-                <path stroke="#f97316" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M5 8.5l4-2.2 3 2.1 4-3 3 2.2" />
-              </svg>
+              <div className="service-icon-wrap">
+                <svg className="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              </div>
               <h3 className="service-name">Drone &amp; Last-Mile Delivery</h3>
               <p className="service-copy">Combine drone support with route-optimized riders to deliver faster in busy areas and hard-to-reach zones.</p>
+              <Link to="/drone-delivery" className="service-link">Explore drones →</Link>
             </article>
+
           </div>
         </div>
       </section>

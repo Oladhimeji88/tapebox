@@ -285,20 +285,37 @@
 .no-post-hero-section.scroll-reveal.in-view .agent-wave-word:nth-child(4) { animation-delay: 0.37s; }
 
 /* ── Services ── */
-.services-wrap  { width: 100%; background: #f1f1f1; }
+.services-wrap { width: 100%; background: #fafafa; }
 .services-shell {
-  max-width: 980px;
+  max-width: 1060px;
   margin: 0 auto;
-  padding: clamp(3.2rem,8vw,5.2rem) clamp(1rem,4vw,2.2rem);
+  padding: clamp(3.6rem,9vw,6rem) clamp(1rem,4vw,2.2rem);
+}
+.services-eyebrow {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #f97316;
+  margin-bottom: 0.75rem;
 }
 .services-title {
-  max-width: 420px;
-  margin: 0 auto clamp(2rem,4vw,2.8rem);
+  max-width: 520px;
+  margin: 0 auto 1rem;
   text-align: center;
-  color: #3f3f46;
-  font-size: clamp(1.8rem,4.2vw,2.6rem);
-  font-weight: 700;
-  line-height: 1.12;
+  color: #18181b;
+  font-size: clamp(1.9rem,4.2vw,2.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+.services-subtitle {
+  max-width: 520px;
+  margin: 0 auto clamp(2.4rem,5vw,3.4rem);
+  text-align: center;
+  color: #71717a;
+  font-size: clamp(0.95rem,1.6vw,1.08rem);
+  line-height: 1.6;
 }
 .services-grid {
   display: grid;
@@ -307,12 +324,44 @@
 }
 @media (min-width: 760px) { .services-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
 .service-item {
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-  padding: 0.5rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 1.1rem;
+  padding: 2rem 1.75rem 1.75rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
-.service-icon  { width: 2.6rem; height: 2.6rem; color: #3f3f46; margin-bottom: 0.7rem; }
-.service-name  { color: #3f3f46; font-size: 1.02rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
-.service-copy  { color: #71717a; font-size: clamp(1rem,1.8vw,1.2rem); line-height: 1.5; max-width: 220px; }
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+  border-color: rgba(249,115,22,0.35);
+}
+.service-icon-wrap {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: rgba(249,115,22,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  flex-shrink: 0;
+}
+.service-icon  { width: 1.5rem; height: 1.5rem; color: #f97316; }
+.service-name  { color: #18181b; font-size: 1.05rem; font-weight: 700; line-height: 1.25; margin-bottom: 0.6rem; }
+.service-copy  { color: #71717a; font-size: 0.95rem; line-height: 1.6; flex: 1; }
+.service-link  {
+  margin-top: 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f97316;
+  transition: gap 180ms ease, opacity 180ms ease;
+}
+.service-link:hover { opacity: 0.75; }
 
 /* ── Pricing ── */
 .pricing-wrap  { width: 100%; background: #f3f4f6; }
